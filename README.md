@@ -1,3 +1,6 @@
+# First Example
+Trying to implement this Plunker https://embed.plnkr.co/5i5dIK/ with Angular 5 and typings for Vega (@types/vega). 
+
 # TestProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4.
