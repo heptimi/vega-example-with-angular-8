@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
-import {View, Parse, parse, Spec} from 'vega';
 import {DataLoaderService} from '../dataLoader.service';
+import {View, Parse, parse, Spec} from 'vega';
 declare var vega: any;
 
 @Component({
@@ -10,40 +10,36 @@ declare var vega: any;
 })
 export class VizTestComponent implements OnInit {
   @Input() id: any;
-  @Input() chartWidth: number;
-  @Input() chartHeight: number;
   @Output() outgoingData = new EventEmitter<any>();
-
-  response: Spec;
+  @Input() pathToData: string;
   view: View;
 
   constructor(private dataLoader: DataLoaderService) {
+    console.log("viz constructor");
   }
   public vegaInit(spec: Spec) {
     this.view = new vega.View(vega.parse(spec))
       .renderer('svg')  // set renderer (canvas or svg)
       .initialize('#' + this.id)// initialize view within parent DOM container
-      .width(this.chartWidth)
-      .height(this.chartHeight)
       .hover()             // enable hover encode set processing
       .run();
 
     this.sendData(this.view);
   }
 
-  public sendData(data: any) {
+  public sendData(data: View) {
     this.outgoingData.emit(data);
   }
 
   ngOnInit() {
-    console.log("child init");
-    this.dataLoader.getDataObservable('../assets/data.json').then(
+    this.dataLoader.getDataObservable(this.pathToData).then(
       data => {
-        this.response = data;
-        this.vegaInit(this.response);
+        this.vegaInit(data);
       }
     );
     console.log("data loaded");
+
+    console.log("child init");
   }
 
 }

@@ -1,3 +1,26 @@
 <div>
-  <app-viz-test id="main" [chartWidth]="500" [chartHeight]="500" (outgoingData)="handleMainChart($event)" style="float:left; margin-left:200px"></app-viz-test>
+  <app-viz-test id="pie" 
+  [pathToData]="pieChart"
+  (outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="airport-connections" 
+[pathToData]="airportConnections"
+(outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="edge-bundling" 
+[pathToData]="egdeBundling"
+(outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="circle-packing" 
+[pathToData]="circlePacking"
+(outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="timeline" 
+[pathToData]="timeline"
+(outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="germany" 
+[pathToData]="mapGermany"
+(outgoingData)="handleMainChart($event)">
+</app-viz-test>
 </div>
