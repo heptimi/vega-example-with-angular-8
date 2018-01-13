@@ -43,7 +43,8 @@ export class VegaChartComponent implements OnInit {
     vega.loader().load('/path/to/data.json')
     .then((data) => { this.vegaInit(JSON.parse(data)); });
   }
-}```
+}
+```
 
 # Angular CLI
 
