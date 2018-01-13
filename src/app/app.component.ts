@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   circlePacking = '../assets/charts/circle-packing.json';
   edgeBundling = '../assets/charts/edge-bundling.json';
   timeline = '../assets/charts/timeline.json';
+  worldMap = '../assets/charts/world-map.json';
 
   constructor() {
     console.log("app constructor");

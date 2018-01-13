@@ -1,8 +1,8 @@
 <div>
-  <app-viz-test id="pie" 
-  [pathToData]="pieChart"
+<app-viz-test id="world-map" 
+  [pathToData]="worldMap"
   (outgoingData)="handleMainChart($event)">
-</app-viz-test>
+</app-viz-test>  
 <app-viz-test id="airport-connections" 
 [pathToData]="airportConnections"
 (outgoingData)="handleMainChart($event)">
@@ -18,6 +18,10 @@
 <app-viz-test id="timeline" 
 [pathToData]="timeline"
 (outgoingData)="handleMainChart($event)">
+</app-viz-test>
+<app-viz-test id="pie" 
+  [pathToData]="pieChart"
+  (outgoingData)="handleMainChart($event)">
 </app-viz-test>
 <app-viz-test id="germany" 
 [pathToData]="mapGermany"
