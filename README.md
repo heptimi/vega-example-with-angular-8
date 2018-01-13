@@ -3,18 +3,24 @@ All chart examples are taken from the official Vega website (https://vega.github
 Inspired by this Plunker https://embed.plnkr.co/5i5dIK/ and trying to implement different charts with Angular 5/2+ and Vega. 
 
 
-# Using Vega with Angular 2+
+# Using Vega with Angular 5/2+
 Install Vega and typings for the library.
-`npm install vega
+```
+npm install vega
 npm install @types/vega`
+```
 
 Add Path to Vega library to the .angular-cli.json file:
-`...
+```
+...
       "scripts": ["../node_modules/vega/build/vega.min.js"],
-...`
+...
+```
 
 Import the library where you want to use it.
-`declare var vega: any;`
+```
+declare var vega: any;
+```
 
 Using the library in your Angular Component:
 
