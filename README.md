@@ -18,7 +18,8 @@ Import the library where you want to use it.
 
 Using the library in your Angular Component:
 
-`@Component({
+```
+@Component({
   selector: 'vega-chart',
   templateUrl: './vega-chart.component.html',
   styleUrls: ['./vega-chart.component.css']
@@ -42,7 +43,7 @@ export class VegaChartComponent implements OnInit {
     vega.loader().load('/path/to/data.json')
     .then((data) => { this.vegaInit(JSON.parse(data)); });
   }
-}`
+}```
 
 # Angular CLI
 
