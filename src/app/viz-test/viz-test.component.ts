@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
-//import {View, Parse, parse, Spec} from 'vega';
+import {View, Parse, parse, Spec} from 'vega';
 import {DataLoaderService} from '../dataLoader.service';
 declare var vega: any;
 
@@ -14,12 +14,12 @@ export class VizTestComponent implements OnInit {
   @Input() chartHeight: number;
   @Output() outgoingData = new EventEmitter<any>();
 
-  response: any;
-  view: any;
+  response: Spec;
+  view: View;
 
   constructor(private dataLoader: DataLoaderService) {
   }
-  public vegaInit(spec: any) {
+  public vegaInit(spec: Spec) {
     this.view = new vega.View(vega.parse(spec))
       .renderer('svg')  // set renderer (canvas or svg)
       .initialize('#' + this.id)// initialize view within parent DOM container
