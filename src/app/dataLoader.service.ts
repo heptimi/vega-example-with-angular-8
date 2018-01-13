@@ -15,7 +15,7 @@ export class DataLoaderService {
         // the console.log(...) line prevents your code from working
         // either remove it or add the line below (return ...)
         //console.log("I CAN SEE DATA HERE: ", data.json());
-        return data;
+        return data.json();
       });
   }
 
