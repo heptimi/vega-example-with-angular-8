@@ -1,30 +1,6 @@
-<div>
-<app-viz-test id="world-map" 
-  [pathToData]="worldMap"
+<div *ngFor="let chart of charts" class="chart-container">
+<app-viz-test id="{{chart.name}}" 
+  [pathToData]="chart.path"
   (outgoingData)="handleMainChart($event)">
-</app-viz-test>  
-<app-viz-test id="airport-connections" 
-[pathToData]="airportConnections"
-(outgoingData)="handleMainChart($event)">
-</app-viz-test>
-<app-viz-test id="edge-bundling" 
-[pathToData]="egdeBundling"
-(outgoingData)="handleMainChart($event)">
-</app-viz-test>
-<app-viz-test id="circle-packing" 
-[pathToData]="circlePacking"
-(outgoingData)="handleMainChart($event)">
-</app-viz-test>
-<app-viz-test id="timeline" 
-[pathToData]="timeline"
-(outgoingData)="handleMainChart($event)">
-</app-viz-test>
-<app-viz-test id="pie" 
-  [pathToData]="pieChart"
-  (outgoingData)="handleMainChart($event)">
-</app-viz-test>
-<app-viz-test id="germany" 
-[pathToData]="mapGermany"
-(outgoingData)="handleMainChart($event)">
 </app-viz-test>
 </div>

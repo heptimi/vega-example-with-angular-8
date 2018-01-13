@@ -21,6 +21,8 @@ export class VizTestComponent implements OnInit {
     this.view = new vega.View(vega.parse(spec))
       .renderer('svg')  // set renderer (canvas or svg)
       .initialize('#' + this.id)// initialize view within parent DOM container
+//      .width(300)
+//      .height(300)
       .hover()             // enable hover encode set processing
       .run();
 
