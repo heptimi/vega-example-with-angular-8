@@ -3,11 +3,11 @@ import {View, Parse, parse, Spec} from 'vega';
 declare var vega: any;
 
 @Component({
-  selector: 'app-viz-test',
-  templateUrl: './viz-test.component.html',
-  styleUrls: ['./viz-test.component.css']
+  selector: 'app-vega-viz',
+  templateUrl: './vega-viz.component.html',
+  styleUrls: ['./vega-viz.component.css']
 })
-export class VizTestComponent implements OnInit {
+export class VegaVizComponent implements OnInit {
   @Input() id: any;
   @Output() outgoingData = new EventEmitter<any>();
   @Input() pathToData: string;

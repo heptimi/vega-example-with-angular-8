@@ -1,6 +1,6 @@
 <div *ngFor="let chart of charts" class="chart-container">
-<app-viz-test id="{{chart.name}}" 
+<app-vega-viz id="{{chart.name}}" 
   [pathToData]="chart.path"
   (outgoingData)="handleMainChart($event)">
-</app-viz-test>
+</app-vega-viz>
 </div>

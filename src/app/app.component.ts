@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {VizTestComponent} from './viz-test/viz-test.component';
+import {VegaVizComponent} from './vega-viz/vega-viz.component';
 
 
 
@@ -25,16 +25,11 @@ export class AppComponent implements OnInit {
             {name: 'egde-bundling', path: '../assets/charts/edge-bundling.json'},
             {name: 'circle-packing', path: '../assets/charts/circle-packing.json'},
             {name: 'timeline', path: '../assets/charts/timeline.json'}];
-  constructor() {
-    console.log("app constructor");
-
-
-  }
+  constructor() {  }
 
   ngOnInit() {
   }
   public handleMainChart(chartData: any) {
-    console.log("main chart data");
     this.mainChart = chartData;
     console.log(this.mainChart);
   }
