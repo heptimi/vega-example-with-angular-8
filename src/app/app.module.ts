@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {DataLoaderService} from './dataLoader.service';
 import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { VizTestComponent } from './viz-test/viz-test.component';
@@ -15,7 +14,7 @@ import { VizTestComponent } from './viz-test/viz-test.component';
     HttpModule,
     BrowserModule
   ],
-  providers: [DataLoaderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
