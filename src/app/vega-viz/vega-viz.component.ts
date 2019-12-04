@@ -1,6 +1,9 @@
-import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, AfterViewInit} from '@angular/core';
 import {View, Parse, parse, Spec} from 'vega';
+
 declare var vega: any;
+
+
 
 @Component({
   selector: 'app-vega-viz',
@@ -13,15 +16,20 @@ export class VegaVizComponent implements OnInit {
   @Input() pathToData: string;
   view: View;
 
-  constructor() {  }
+  constructor(private modalService: NgbModal) {
+  }
+
   public vegaInit(spec: Spec) {
     this.view = new vega.View(vega.parse(spec))
       .renderer('svg')  // set renderer (canvas or svg)
       .initialize('#' + this.id)// initialize view within parent DOM container
-//      .width(300)
-//      .height(300)
+      //      .width(300)
+      //      .height(300)
       .hover()             // enable hover encode set processing
-      .run();
+      .run()
+      .addEventListener('click', function(event, item) {
+        console.log('CLICK', item);
+      });
 
     this.sendData(this.view);
   }
@@ -32,7 +40,18 @@ export class VegaVizComponent implements OnInit {
 
   ngOnInit() {
     vega.loader().load(this.pathToData)
-    .then((data) => { this.vegaInit(JSON.parse(data)); });
+      .then((data) => {
+        this.vegaInit(JSON.parse(data));
+      });
+    // this.view.addEventListener('click', function(event, item) {
+    //   console.log(item.datum);
+    // });
+
+  }
+
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.name = 'World';
   }
 
 }
